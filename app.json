@@ -6,17 +6,36 @@
     "orientation": "portrait",
     "icon": "./assets/tutorxapp.png",
     "userInterfaceStyle": "light",
+
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/d2fbd5ab-a8c0-4c94-8b28-89569b82c7ed"
+    },
+
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+
     "splash": {
       "image": "./assets/tutorxapp.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+
+    "assetBundlePatterns": ["**/*"],
+
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/tutorxapp.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.noorsra.tutorx"
+    },
+
+    "extra": {
+      "eas": {
+        "projectId": "d2fbd5ab-a8c0-4c94-8b28-89569b82c7ed"
+      }
     }
   }
 }

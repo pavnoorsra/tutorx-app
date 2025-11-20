@@ -1,5 +1,5 @@
 // screens/SavedScreen.js
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   View,
   Text,
@@ -11,13 +11,12 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 import { ThemeContext } from "../utils/themeManager";
-import { useContext } from "react";
 
-export default function SavedScreen() {
+export default function SavedScreen({ navigation }) {
   const [saved, setSaved] = useState([]);
   const { theme } = useContext(ThemeContext);
 
-  // Load saved translations every time screen opens
+  // Load saved translations when screen opens
   useFocusEffect(
     React.useCallback(() => {
       loadSaved();
@@ -37,7 +36,15 @@ export default function SavedScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.bg }]}>
-      <Text style={[styles.title, { color: theme.text }]}>Saved Translations</Text>
+
+      {/* 🔙 Back Button */}
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Text style={{ fontSize: 18, color: theme.text }}>← Back</Text>
+      </TouchableOpacity>
+
+      <Text style={[styles.title, { color: theme.text }]}>
+        Saved Translations
+      </Text>
 
       {saved.length === 0 ? (
         <Text style={{ color: theme.text, fontSize: 16 }}>
@@ -70,7 +77,9 @@ export default function SavedScreen() {
                 style={styles.deleteBtn}
                 onPress={() => deleteItem(item.id)}
               >
-                <Text style={{ color: "white", fontWeight: "bold" }}>Delete</Text>
+                <Text style={{ color: "white", fontWeight: "bold" }}>
+                  Delete
+                </Text>
               </TouchableOpacity>
             </View>
           )}
@@ -82,7 +91,7 @@ export default function SavedScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
-  title: { fontSize: 28, fontWeight: "bold", marginBottom: 20, marginTop: 40 },
+  title: { fontSize: 28, fontWeight: "bold", marginBottom: 20, marginTop: 20 },
 
   card: {
     borderWidth: 1,
