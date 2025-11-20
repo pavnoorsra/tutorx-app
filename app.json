@@ -4,34 +4,19 @@
     "slug": "tutorx",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/tutorxlogo.png",
+    "icon": "./assets/tutorxapp.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/tutorxapp.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/tutorxapp.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      "expo-secure-store"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "d2fbd5ab-a8c0-4c94-8b28-89569b82c7ed"
-      }
+      "package": "com.noorsra.tutorx"
     }
   }
 }
