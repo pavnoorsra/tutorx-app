@@ -39,7 +39,7 @@ export default function SavedScreen({ navigation }) {
 
       {/* 🔙 Back Button */}
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text style={{ fontSize: 18, color: theme.text }}>← Back</Text>
+        <Text style={{ fontSize: 18, color: theme.text, marginTop: 40 }}>← Back</Text>
       </TouchableOpacity>
 
       <Text style={[styles.title, { color: theme.text }]}>
@@ -91,7 +91,7 @@ export default function SavedScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
-  title: { fontSize: 28, fontWeight: "bold", marginBottom: 20, marginTop: 20 },
+  title: { fontSize: 28, fontWeight: "bold", marginBottom: 20, marginTop: 80 },
 
   card: {
     borderWidth: 1,
